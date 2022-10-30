@@ -1,4 +1,4 @@
 # Dense Trade Routes Tab mod
-This a mod for Victoria 3. To install, move this folder to the .../Documents/Paradox Interactive/Victoria 3/mod/
+This is a mod that tries to change the trade routes tab to a more compact version. Please report any instability issues (crashes etc.) that you encounter because of this mod.
 
-This mod changes the Trade Route tab to a more dense, succint version.
+**Compatibility**: This mod should be compatible with any mod that doesn't change the Trade Routes panel.
