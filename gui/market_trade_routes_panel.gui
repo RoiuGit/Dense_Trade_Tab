@@ -196,7 +196,7 @@ types market_panel
 		datacontext = "[MarketGoods.GetMarket]"
 		direction = vertical
 		parentanchor = hcenter
-		margin_top = 15
+		margin_top = 0 # was 15
 
 		flowcontainer = {
 			maximumsize = { @panel_width 100 }
