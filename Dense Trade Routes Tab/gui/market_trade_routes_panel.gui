@@ -229,76 +229,76 @@ types market_panel
 					}
 					using = market_price_tooltip_with_graph
 					hbox = {
-					ignoreinvisible = no
-					spacing = 5
-					margin_left = 25
-					parentanchor = vcenter
-					textbox = {
+						ignoreinvisible = no
+						spacing = 5
+						margin_left = 25
+						parentanchor = vcenter
+						textbox = {
 							size = { 115 50 }
 							text = "@money![Goods.GetMarketPrice|0v] [Goods.GetCompareIconAgainstBasePrice( Goods.GetMarketPrice )] (#v [Goods.GetPercentageDeltaAgainstBasePrice(Goods.GetMarketPrice)|%0=-]#!)"					
+						}
+						widget = {				
+							size = { 200 50 }
+							widget = {
+								parentanchor = left
+								size = { 100 50 } # was { 150 50 }
+								tooltip = "TRADED_GOODS_IMPORTED_TOOLTIP"
+								hbox = {
+									alpha = "[TransparentIfTrue(EqualTo_CFixedPoint(MarketGoods.GetImportAmount, '(CFixedPoint)0'))]"
+									layoutpolicy_horizontal = expanding
+									#visible = "[GreaterThan_int32(MarketGoods.GetNumImportTradeRoutes, '(int32)0')]"
+									margin_left = 0 # was 10
+									
+									icon = {
+										texture = "gfx/interface/icons/lens_toolbar_icons/trade_route_import_lens_option.dds"
+										size = { 20 20 } # was { 35 35 }
+									}
+									textbox = {
+										elide = right
+										layoutpolicy_horizontal = expanding
+										margin = { 10 0 }
+										using = fontsize_large
+										fontsize_min = 12
+										text = "TRADED_GOODS_IMPORTED_AND_NUMBER_OF_IMPORT_ROUTES"
+									}
+								}
 							}
-					widget = {				
-					size = { 200 50 }
-					widget = {
-						parentanchor = left
-						size = { 100 50 } # was { 150 50 }
-						tooltip = "TRADED_GOODS_IMPORTED_TOOLTIP"
-						hbox = {
-							alpha = "[TransparentIfTrue(EqualTo_CFixedPoint(MarketGoods.GetImportAmount, '(CFixedPoint)0'))]"
-							layoutpolicy_horizontal = expanding
-							#visible = "[GreaterThan_int32(MarketGoods.GetNumImportTradeRoutes, '(int32)0')]"
-							margin_left = 0 # was 10
-							
-							icon = {
-								texture = "gfx/interface/icons/lens_toolbar_icons/trade_route_import_lens_option.dds"
-								size = { 20 20 } # was { 35 35 }
-							}
-							textbox = {
-								elide = right
-								layoutpolicy_horizontal = expanding
-								margin = { 10 0 }
-								using = fontsize_large
-								fontsize_min = 12
-								text = "TRADED_GOODS_IMPORTED_AND_NUMBER_OF_IMPORT_ROUTES"
+							widget = {
+								parentanchor = right
+								size = { 100 50 } # was { 150 50 }
+								tooltip = "TRADED_GOODS_EXPORTED_TOOLTIP"
+								hbox = {
+									alpha = "[TransparentIfTrue(EqualTo_CFixedPoint(MarketGoods.GetExportAmount, '(CFixedPoint)0'))]"
+									layoutpolicy_horizontal = expanding
+									#visible = "[GreaterThan_int32(MarketGoods.GetNumExportTradeRoutes, '(int32)0')]"
+									margin_left = 0 # was 10
+									
+									icon = {
+										texture = "gfx/interface/icons/lens_toolbar_icons/trade_route_export_lens_option.dds"
+										size = { 20 20 } # was { 35 35 }
+									}
+									textbox = {
+										elide = right
+										layoutpolicy_horizontal = expanding
+										margin = { 10 0 }
+										#visible = "[NotEqualTo_CFixedPoint(MarketGoods.GetExportAmount, '(CFixedPoint)0')]"
+										using = fontsize_large
+										fontsize_min = 12
+										text = "TRADED_GOODS_EXPORTED_AND_NUMBER_OF_EXPORT_ROUTES"
+									}
+								}
 							}
 						}
-					}
-					widget = {
-						parentanchor = right
-						size = { 100 50 } # was { 150 50 }
-						tooltip = "TRADED_GOODS_EXPORTED_TOOLTIP"
-						hbox = {
-							alpha = "[TransparentIfTrue(EqualTo_CFixedPoint(MarketGoods.GetExportAmount, '(CFixedPoint)0'))]"
-							layoutpolicy_horizontal = expanding
-							#visible = "[GreaterThan_int32(MarketGoods.GetNumExportTradeRoutes, '(int32)0')]"
-							margin_left = 0 # was 10
-							
-							icon = {
-								texture = "gfx/interface/icons/lens_toolbar_icons/trade_route_export_lens_option.dds"
-								size = { 20 20 } # was { 35 35 }
-							}
-							textbox = {
-								elide = right
-								layoutpolicy_horizontal = expanding
-								margin = { 10 0 }
-								#visible = "[NotEqualTo_CFixedPoint(MarketGoods.GetExportAmount, '(CFixedPoint)0')]"
-								using = fontsize_large
-								fontsize_min = 12
-								text = "TRADED_GOODS_EXPORTED_AND_NUMBER_OF_EXPORT_ROUTES"
-							}
+						set_level_bar_market_tariffs = {
+							margin_left = -5
+						}
+						icon = {
+							tooltip = "There are trade routes for this good that are owned by you"
+							size = { 30 30 }
+							texture = "gfx/interface/icons/lens_toolbar_icons/trade_agreement.dds"
+							visible = "[Not(IsDataModelEmpty(MarketGoods.AccessPlayerTradeRoutes))]"		
 						}
 					}
-				}
-					set_level_bar_market_tariffs = {
-					margin_left = -5
-					}
-				icon = {
-					tooltip = "There are trade routes for this good that are owned by you"
-					size = { 30 30 }
-					texture = "gfx/interface/icons/lens_toolbar_icons/trade_agreement.dds"
-					visible = "[Not(IsDataModelEmpty(MarketGoods.AccessPlayerTradeRoutes))]"		
-				}
-				}
 				}
 			}
 		}
