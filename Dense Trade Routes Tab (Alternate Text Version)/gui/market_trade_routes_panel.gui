@@ -260,7 +260,6 @@ types market_panel
 								size = { 20 20 } # was { 35 35 }
 							}
 							textbox = {
-								parentanchor = vcenter
 								layoutpolicy_horizontal = expanding
 								margin = { 10 0 }
 								using = fontsize_large
@@ -318,7 +317,6 @@ types market_panel
 								size = { 20 20 } # was { 35 35 }
 							}
 							textbox = {
-								parentanchor = vcenter
 								layoutpolicy_horizontal = expanding
 								margin = { 10 0 }
 								using = fontsize_large
