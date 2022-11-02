@@ -205,7 +205,6 @@ types market_panel
 			button_icon_round_big = {
 				size = { 40 40 } # was { 80 80 }
 				blockoverride "icon" {
-					margin_left = -5
 					texture = "[Goods.GetTexture]"
 				}
 
@@ -256,7 +255,6 @@ types market_panel
 							}
 							textbox = {
 								elide = right
-								parentanchor = vcenter
 								layoutpolicy_horizontal = expanding
 								margin = { 10 0 }
 								using = fontsize_large
