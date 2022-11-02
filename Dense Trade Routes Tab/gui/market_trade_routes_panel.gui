@@ -230,6 +230,7 @@ types market_panel
 					}
 					using = market_price_tooltip_with_graph
 					hbox = {
+					ignoreinvisible = no
 					spacing = 5
 					margin_left = 25
 					parentanchor = vcenter
@@ -298,12 +299,6 @@ types market_panel
 					size = { 30 30 }
 					texture = "gfx/interface/icons/lens_toolbar_icons/trade_agreement.dds"
 					visible = "[Not(IsDataModelEmpty(MarketGoods.AccessPlayerTradeRoutes))]"		
-				}
-				icon = {
-					tooltip = "There are no trade routes for this good that are owned by you"
-					size = { 30 30 }
-					texture = "gfx/interface/icons/lens_toolbar_icons/trade_agreement_break.dds"
-					visible = "[IsDataModelEmpty(MarketGoods.AccessPlayerTradeRoutes)]"	
 				}
 				}
 				}
