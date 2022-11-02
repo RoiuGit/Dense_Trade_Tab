@@ -294,13 +294,13 @@ types market_panel
 					margin_left = -5
 					}
 				icon = {
-					tooltip = "There are your owned trade routes for this good"
+					tooltip = "There are trade routes for this good that are owned by you"
 					size = { 30 30 }
 					texture = "gfx/interface/icons/lens_toolbar_icons/trade_agreement.dds"
 					visible = "[Not(IsDataModelEmpty(MarketGoods.AccessPlayerTradeRoutes))]"		
 				}
 				icon = {
-					tooltip = "There are no player-owned trade routes for this good"
+					tooltip = "There are no trade routes for this good that are owned by you"
 					size = { 30 30 }
 					texture = "gfx/interface/icons/lens_toolbar_icons/trade_agreement_break.dds"
 					visible = "[IsDataModelEmpty(MarketGoods.AccessPlayerTradeRoutes)]"	
