@@ -203,7 +203,7 @@ types market_panel
 			
 			### Goods icon
 			button_icon_round_big = {
-				size = { 50 50 } # was { 80 80 }
+				size = { 40 40 } # was { 80 80 }
 				blockoverride "icon" {
 					margin_left = -5
 					texture = "[Goods.GetTexture]"
@@ -226,7 +226,7 @@ types market_panel
 				### DROPDOWN / EXPAND
 				section_header_button = {
 					blockoverride "layout" {
-						size = { 475 50 } # was { 450 40 }
+						size = { 500 40 } # was { 450 40 }
 					}
 					using = market_price_tooltip_with_graph
 					hbox = {
