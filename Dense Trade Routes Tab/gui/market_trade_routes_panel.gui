@@ -197,16 +197,15 @@ types market_panel
 		direction = vertical
 		parentanchor = hcenter
 		margin_top = 0 # was 15
-
 		flowcontainer = {
 			maximumsize = { @panel_width 100 }
 			parentanchor = left
 			
 			### Goods icon
 			button_icon_round_big = {
-				size = { 40 40 } # was { 80 80 }
-				
+				size = { 50 50 } # was { 80 80 }
 				blockoverride "icon" {
+					margin_left = -5
 					texture = "[Goods.GetTexture]"
 				}
 
@@ -221,27 +220,29 @@ types market_panel
 					FancyTooltip_Goods = {}
 				}
 			}
-
 			flowcontainer = {
+				margin_left = -10
 				direction = vertical
 				### DROPDOWN / EXPAND
 				section_header_button = {
 					blockoverride "layout" {
-						size = { 500 40 } # was { 450 40 }
+						size = { 475 50 } # was { 450 40 }
 					}
-
 					using = market_price_tooltip_with_graph
-
-					blockoverride "left_text" {
-							text = "@money![Goods.GetMarketPrice|0v] [Goods.GetCompareIconAgainstBasePrice( Goods.GetMarketPrice )] (#v [Goods.GetPercentageDeltaAgainstBasePrice(Goods.GetMarketPrice)|%0=-]#!)"
-					}
-
-					blockoverride "right_text" {
+					hbox = {
+					spacing = 5
+					margin_left = 25
 					parentanchor = vcenter
+					textbox = {
+							size = { 115 50 }
+							text = "@money![Goods.GetMarketPrice|0v] [Goods.GetCompareIconAgainstBasePrice( Goods.GetMarketPrice )] (#v [Goods.GetPercentageDeltaAgainstBasePrice(Goods.GetMarketPrice)|%0=-]#!)"					
+							}
+					widget = {				
+					size = { 200 50 }
 					widget = {
+						parentanchor = left
 						size = { 100 50 } # was { 150 50 }
 						tooltip = "TRADED_GOODS_IMPORTED_TOOLTIP"
-						parentanchor = vcenter
 						hbox = {
 							alpha = "[TransparentIfTrue(EqualTo_CFixedPoint(MarketGoods.GetImportAmount, '(CFixedPoint)0'))]"
 							layoutpolicy_horizontal = expanding
@@ -253,20 +254,20 @@ types market_panel
 								size = { 20 20 } # was { 35 35 }
 							}
 							textbox = {
+								elide = right
 								parentanchor = vcenter
 								layoutpolicy_horizontal = expanding
 								margin = { 10 0 }
 								using = fontsize_large
-								elide = right
 								fontsize_min = 12
 								text = "TRADED_GOODS_IMPORTED_AND_NUMBER_OF_IMPORT_ROUTES"
 							}
 						}
 					}
 					widget = {
+						parentanchor = right
 						size = { 100 50 } # was { 150 50 }
 						tooltip = "TRADED_GOODS_EXPORTED_TOOLTIP"
-						parentanchor = vcenter
 						hbox = {
 							alpha = "[TransparentIfTrue(EqualTo_CFixedPoint(MarketGoods.GetExportAmount, '(CFixedPoint)0'))]"
 							layoutpolicy_horizontal = expanding
@@ -278,19 +279,31 @@ types market_panel
 								size = { 20 20 } # was { 35 35 }
 							}
 							textbox = {
+								elide = right
 								layoutpolicy_horizontal = expanding
 								margin = { 10 0 }
 								#visible = "[NotEqualTo_CFixedPoint(MarketGoods.GetExportAmount, '(CFixedPoint)0')]"
 								using = fontsize_large
-								elide = right
 								fontsize_min = 12
 								text = "TRADED_GOODS_EXPORTED_AND_NUMBER_OF_EXPORT_ROUTES"
 							}
 						}
 					}
+				}
 					set_level_bar_market_tariffs = {
+					margin_left = -5
 					}
-					}
+				icon = {
+					size = { 30 30 }
+					texture = "gfx/interface/icons/lens_toolbar_icons/trade_agreement.dds"
+					visible = "[Not(IsDataModelEmpty(MarketGoods.AccessPlayerTradeRoutes))]"		
+				}
+				icon = {
+					size = { 30 30 }
+					texture = "gfx/interface/icons/lens_toolbar_icons/trade_agreement_break.dds"
+					visible = "[IsDataModelEmpty(MarketGoods.AccessPlayerTradeRoutes)]"	
+				}
+				}
 				}
 			}
 		}
