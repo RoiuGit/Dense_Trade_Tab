@@ -11,5 +11,3 @@ There are two versions: the main one uses an icon with a tooltip to indicate whe
 ## Installation
 
 To install the main version, copy the "Dense Trade Routes Tab" folder into your "%User%/Documents/Paradox Interactive/Victoria 3/mod/" folder.
-
-To install an alternate version, copy the "Dense Trade Routes Tab (Alternate Text Version)" folder into your "%User%/Documents/Paradox Interactive/Victoria 3/mod/" folder.
