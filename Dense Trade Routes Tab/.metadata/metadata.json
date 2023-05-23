@@ -6,7 +6,6 @@
   "short_description" : "",
   "tags" : [],
   "relationships" : [],
-  "picture" : "thumbnail.png",
   "game_custom_data" : {
     "multiplayer_synchronized" : true
   }
