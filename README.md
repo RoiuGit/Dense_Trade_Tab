@@ -4,8 +4,6 @@
 
 This is a mod that tries to change the trade routes tab to a more compact version. Please report any instability issues (crashes etc.) that you encounter because of this mod.
 
-There are two versions: the main one uses an icon with a tooltip to indicate whether a certain good has player-owned trade routes. The alternate version uses a text indicator.
-
 **Compatibility**: This mod should be compatible with any mod that doesn't change the Trade Routes panel.
 
 ## Installation
