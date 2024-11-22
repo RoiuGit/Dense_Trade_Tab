@@ -8,4 +8,4 @@ This is a mod that tries to change the trade routes tab to a more compact versio
 
 ## Installation
 
-To install the main version, copy the "Dense Trade Routes Tab" folder into your "%User%/Documents/Paradox Interactive/Victoria 3/mod/" folder.
+To install the mod, copy the "Dense Trade Routes Tab" folder into your "%User%/Documents/Paradox Interactive/Victoria 3/mod/" folder.
